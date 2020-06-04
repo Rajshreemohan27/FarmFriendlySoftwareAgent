@@ -12,12 +12,13 @@ lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
 from keras.models import load_model
-model = load_model(r'E:\Coding\Python\chat_bot_file\Chat_bot\chatbot_model.h5')
+model = load_model(r'C:\Users\hp\Work\Artificial-intelligent-chatbot\project\chatbot_model.h5')
 import json
 import random
-intents = json.loads(open(r'E:\Coding\Python\chat_bot_file\Chat_bot\intents.json').read())
-words = pickle.load(open(r'E:\Coding\Python\chat_bot_file\Chat_bot\words.pkl','rb'))
-classes = pickle.load(open(r'E:\Coding\Python\chat_bot_file\Chat_bot\classes.pkl','rb'))
+
+intents = json.loads(open(r'C:\Users\hp\Work\Artificial-intelligent-chatbot\project\intents.json').read())
+words = pickle.load(open(r'C:\Users\hp\Work\Artificial-intelligent-chatbot\project\words.pkl','rb'))
+classes = pickle.load(open(r'C:\Users\hp\Work\Artificial-intelligent-chatbot\project\classes.pkl','rb'))
 
 
 def clean_up_sentence(sentence):
@@ -62,6 +63,8 @@ def getResponse(ints, intents_json):
             result = random.choice(i['responses'])
             break
     return result
+    
+
 def chatbot_response(text):
     ints = predict_class(text, model)
     res = getResponse(ints, intents)

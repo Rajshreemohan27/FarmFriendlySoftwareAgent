@@ -20,7 +20,7 @@ words=[]
 classes = []
 documents = []
 ignore_words = ['?', '!']
-data_file = open(r"E:\Coding\Python\chat_bot_file\Chat_bot\intents.json").read()
+data_file = open(r"C:\Users\hp\Work\Artificial-intelligent-chatbot\project\intents.json").read()
 intents = json.loads(data_file)
 
 for intent in intents['intents']:
@@ -45,8 +45,8 @@ print (len(documents), "documents")
 print (len(classes), "classes", classes)
 # words = all words, vocabulary
 print (len(words), "unique lemmatized words", words)
-pickle.dump(words,open(r'E:\Coding\Python\chat_bot_file\Chat_bot\words.pkl','wb'))
-pickle.dump(classes,open(r'E:\Coding\Python\chat_bot_file\Chat_bot\classes.pkl','wb'))
+pickle.dump(words,open(r'C:\Users\hp\Work\Artificial-intelligent-chatbot\project\words.pkl','wb'))
+pickle.dump(classes,open(r'C:\Users\hp\Work\Artificial-intelligent-chatbot\project\classes.pkl','wb'))
 
 # create our training data
 training = []
@@ -91,7 +91,7 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 
 #fitting and saving the model 
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-model.save(r'E:\Coding\Python\chat_bot_file\Chat_bot\chatbot_model.h5', hist)
+model.save(r'C:\Users\hp\Work\Artificial-intelligent-chatbot\project\chatbot_model.h5', hist)
 
 print("model created")
 

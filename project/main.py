@@ -1,23 +1,47 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat May  9 22:59:57 2020
 
-@author: Madhan Kumar Selvaraj
-"""
 
 from flask import Flask, render_template, request
 from chatbot_model import chatbot_response
 from scrape import scrape_data
-
+import speech_recognition as sr
 
 check_wikipedia1 = ['what', 'is']
 check_wikipedia2 = ['who', 'is']
 check_wikihow = ['how', 'to']
 
 app = Flask(__name__)
-@app.route("/")
+
+# def takeQuery():
+#     sr=s.Recognizer()
+#     sr.pause_threahold=1
+#     print("Bot is listening , try to speak")
+#     with s.Microphone() as m:
+#         audio= sr.listen(m)
+#         query=sr.recognize_google(audio,language='eng=in')
+#         print(query)
+#         textF.delete(0,END)
+#         textF.insert(0,query)
+#         get_bot_response()
+
+@app.route("/home")
 def home():
     return render_template("index.html")
+
+@app.route("/")
+def login():
+    return render_template("login.html")
+
+@app.route("/speech")
+def speech_recognition():
+    r = sr.Recognizer()
+    sr.pause_threahold=0.8
+    with sr.Microphone() as source:
+        audio = r.listen(source)
+        try:
+            return r.recognize_google(audio) 
+        except sr.UnknownValueError:
+            error = "error"
+            return error
 
 @app.route("/get")
 def get_bot_response():

@@ -26,28 +26,19 @@
         },
 		 {"tag": "work",
          "patterns": ["what you can do for me?", "what you know?", "what is the use of you?","How you can help me?"],
-         "responses": ["I am here to guide you for Data science course","Assist you for Data science course"],
+         "responses": ["I am here to guide you for Agriculture related queries","Assist you for  Agriculture related queries"],
          "context": [""]
         },
-		 {"tag": "datascience",
-         "patterns": ["Tell me about data science","Use of learning data science"],
-         "responses": ["It is field of study that gives computers the ability to learn without being explicitly programmed"],
+		 {"tag": "agriculture",
+         "patterns": ["Tell me about agriculture","Use of agriculture", "What is agriculture"],
+         "responses": ["Agriculture is the science or practice of farming, including cultivation of the soil for the growing of crops and the rearing of animals to provide food, wool, and other products","Agriculture is the science and art of cultivating plants and livestock","Agriculture definition, the science, art, or occupation concerned with cultivating land, raising crops, and feeding, breeding, and raising livestock; farming"],
          "context": [""]
         },
-		 {"tag": "dsgrowth",
-         "patterns": ["What is the growth of data science","Scope of data science"],
-         "responses": ["LinkedIn data shows that hiring growth has grown 74% in the past four years", "Data science is going to be one of the most sought after profession after a while just like app developers in the last few years","Career growth in Data Science can be well estimated by the fact that Harvard Business Review has called it the 'Sexiest job of the 21st century'"],
-         "context": [""]
-        },
-		 {"tag": "coursedetail",
-         "patterns": ["Tell me about the course","what about the course"],
-         "responses": ["Data science course package contains statistics, machine learning and deep learning. It takes half a year to complete the course and you can have a course in Chennai, Bangalore, Mumbai, Delhi and Kolkatta"],
-         "context": [""]
-        },
-		{"tag": "coursefee",
-         "patterns": ["What is the course fees","what is the fees","How much need to pay"],
-         "responses": ["You can check our website for further reference! https://madhankumarselvaraj.blogspot.com/"],
+		 {"tag": "rainfall",
+         "patterns": ["Which is the rainyfall pattern in india","How do rainfall pattern vary in india"],
+         "responses": ["Rainy season in India extends from June to mid- September.", "India is one of the ancient regions having different rainfall pattern which has developed into places with its own unique ecosystem"],
          "context": [""]
         }
+
    ]
 }
